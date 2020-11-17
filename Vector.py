@@ -1,3 +1,6 @@
+import math
+
+
 class Vector:
     def __init__(self, lst):
         self.lst = lst
@@ -24,6 +27,13 @@ class Vector:
             v += self.lst[i]*vec.lst[i]
         return v
 
+    def magnitude(self):
+        print(f"Magnitude of {Vector(self.lst)} is : ")
+        m = 0
+        for i in range(len(self.lst)):
+            m += (self.lst[i]**2)
+        return math.sqrt(m)
+
 
 v1 = Vector([1, 2, 3])
 print(v1)
@@ -33,3 +43,4 @@ s = v1+v2
 print(s)
 m = v1 * v2
 print(m)
+print(v1.magnitude())
